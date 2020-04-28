@@ -51,7 +51,6 @@ class _UsersListScreenState extends State<UsersListScreen> {
 
   @override
   Widget build(BuildContext context) {
-//    throw UnimplementedError();
     return Scaffold(
       appBar: AppBar(
         title: Text("CLIENT DETAILS"),
@@ -88,7 +87,6 @@ class _UsersListScreenState extends State<UsersListScreen> {
 class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-//    throw UnimplementedError();
     final User user = ModalRoute.of(context).settings.arguments;
 
     return Scaffold(

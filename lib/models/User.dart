@@ -12,6 +12,6 @@ class User {
         phone = json['phone'];
 
   Map toJson() {
-    return {'id': id, 'name': name, 'email': email, 'username': username, 'phone': phone,};
+    return {'id': id, 'name': name, 'email': email, 'username': username, 'phone': phone};
   }
 }
