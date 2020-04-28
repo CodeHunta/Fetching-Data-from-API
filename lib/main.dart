@@ -58,8 +58,8 @@ class _UsersListScreenState extends State<UsersListScreen> {
             itemBuilder: (context, index) {
               return ListTile(
                   leading: Icon(
-                    Icons.person,
-                    size: 50.0,
+                    Icons.account_box,
+                    size: 65.0,
                     color: Colors.blueAccent,
                   ),
                   title: Text(users[index].name),
@@ -90,36 +90,42 @@ class DetailScreen extends StatelessWidget {
       body: new Center(
         child: Card(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Icon(
                 Icons.person,
                 color: Colors.blueAccent,
-                size: 300.0,
-              ),
-              SizedBox(height: 25.0),
-              new Text(
-                'Name: ' + user.name,
-                textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
+                size: 250.0,
               ),
               SizedBox(height: 10.0),
               new Text(
-                ' Username: ' + user.username,
+                'Name: ' + user.name,
                 textAlign: TextAlign.center,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0),
               ),
               SizedBox(height: 10.0),
               new Text(
+                ' Username: ' + user.username,
+                textAlign: TextAlign.center,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+              ),
+              SizedBox(height: 10.0),
+              new Text(
                 'Email: ' + user.email,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
               ),
               SizedBox(height: 10.0),
               new Text(
                 'Phone: ' + user.phone,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+              ),
+              SizedBox(height: 10.0),
+              new Text(
+                'Address: ' + user.city,
+                textAlign: TextAlign.center,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
               ),
             ],
           ),

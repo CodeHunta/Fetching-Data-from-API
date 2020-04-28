@@ -1,15 +1,16 @@
 class User {
   int id;
-  String name, email, username, phone;
+  String name, email, username, phone, city;
 
-  User(this.id, this.name, this.email, this.username, this.phone);
+  User(this.id, this.name, this.email, this.username, this.phone, this.city);
 
   User.fromJson(Map json)
       : id = json['id'],
         name = json['name'],
         email = json['email'],
         username = json['username'],
-        phone = json['phone'];
+        phone = json['phone'],
+        city = json['address'];
 
   Map toJson() {
     return {
@@ -17,7 +18,8 @@ class User {
       'name': name,
       'email': email,
       'username': username,
-      'phone': phone
+      'phone': phone,
+      'address': city,
     };
   }
 }
