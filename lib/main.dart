@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:userdata/api.dart';
-import 'package:userdata/user.dart';
+import 'package:userdata/models/User.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,9 +11,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Client Details',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepPurple,
       ),
       home: UsersListScreen(),
     );
@@ -52,6 +53,10 @@ class _UsersListScreenState extends State<UsersListScreen> {
   Widget build(BuildContext context) {
 //    throw UnimplementedError();
     return Scaffold(
+      appBar: AppBar(
+        title: Text("CLIENT DETAILS"),
+        centerTitle: true,
+      ),
       body: Card(
         child: ListView.builder(
             itemCount: users.length,
@@ -60,7 +65,7 @@ class _UsersListScreenState extends State<UsersListScreen> {
                   leading: Icon(
                     Icons.account_box,
                     size: 65.0,
-                    color: Colors.blueAccent,
+                    color: Color(0xFF262D60),
                   ),
                   title: Text(users[index].name),
                   subtitle: Text(users[index].email),
@@ -87,6 +92,10 @@ class DetailScreen extends StatelessWidget {
     final User user = ModalRoute.of(context).settings.arguments;
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text("CLIENT DETAILS"),
+        centerTitle: true,
+      ),
       body: new Center(
         child: Card(
           child: Column(
@@ -94,38 +103,32 @@ class DetailScreen extends StatelessWidget {
             children: <Widget>[
               Icon(
                 Icons.person,
-                color: Colors.blueAccent,
-                size: 250.0,
+                color: Color(0xFF262D60),
+                size: 300.0,
               ),
               SizedBox(height: 10.0),
               new Text(
                 'Name: ' + user.name,
-                textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0),
+                textAlign: TextAlign.left,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
               ),
               SizedBox(height: 10.0),
               new Text(
                 ' Username: ' + user.username,
-                textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+                textAlign: TextAlign.left,
+                style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20.0),
               ),
               SizedBox(height: 10.0),
               new Text(
                 'Email: ' + user.email,
-                textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+                textAlign: TextAlign.left,
+                style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20.0),
               ),
               SizedBox(height: 10.0),
               new Text(
                 'Phone: ' + user.phone,
-                textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-              ),
-              SizedBox(height: 10.0),
-              new Text(
-                'Address: ' + user.city,
-                textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+                textAlign: TextAlign.left,
+                style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20.0),
               ),
             ],
           ),
